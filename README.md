@@ -1,5 +1,4 @@
-# Fusion Boilerplate react sample 
-================================
+# Fusion Boilerplate react sample
 
 In this app, we will go through steps to deploy Fusion Boilerplate react sample on Morpheuslabs BaaS platform.
 
@@ -36,7 +35,7 @@ Wait a minute for workspace to connect with your git repo
 4. Goto Application Library tab
 <img src="public/images/screens/a-8.png"/>
 
-5. Click on download icon of FusionWallet Sample and download app
+5. Click on download icon of Fussion boilerplate Sample and download app
 <img src="public/images/screens/a-9.png"/>
 
 6. After app is downloaded, click on deploy button and enter workspace name to deploy
@@ -85,7 +84,7 @@ NOTE: Important note, when you just start up blockchain network, it will take so
 2. Run `npm install`
 <img src="public/images/screens/ws-2.png"/>
 
-3. Config application, open file `/src/component/Fusion.js`, update following information for Morpheurlabs option.
+3. Config application, open file `/src/component/Fusion.js`, Network and chainId.
     - _NETWORK is 'External WS URL' you get before
     - And ChainID is 'Network Id'
     <img src="public/images/screens/ws-3.png"/>
