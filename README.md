@@ -1,48 +1,102 @@
+# Fusion Boilerplate react sample 
+================================
 
-<div align="center"><img src ="https://uploads-ssl.webflow.com/5cbf7269aa4c8ec895500d90/5cc70756e6cc13a82b2f7fb1_Fusion_Light.svg"/></div>
+In this app, we will go through steps to deploy Fusion Boilerplate react sample on Morpheuslabs BaaS platform.
 
-This boilerplate was created to encourage and help developers bootstrap a FUSION application as fast as possible. With several code snippets available this boilerplate gives a good example on how to utilize FUSION's functions.
+Morpheuslabs platform provide great system to create a ready blockchain development with few clicks.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Now, we firstly create a workspace with all thing setup to start develop
+
+## Step 1. Register new account in `https://bps.morpheuslabs.io`
+
+<img src="public/images/screens/a-1.png"/>
+
+2. Goto Membership tab click and subscribe try plan
+<img src="public/images/screens/a-2.png"/>
+
+3. Update use profile and finish subscribe
+<img src="public/images/screens/a-3.png"/>
+<img src="public/images/screens/a-41.png"/>
+<img src="public/images/screens/a-4.png"/>
+
+## Step 2: Download Fusion sample from app library.
+
+Next we will download app from app library to run on workspace. Before you are able to download app, you need a gitlab or github repo to link with your account
+1. Goto `https://gitlab.com` or `https://github.com` and register new account if you do not have it yet. More info about My Repository configuration <a href="https://docs.morpheuslabs.io/docs/configuration">here</a>
+2. Goto your setting and create new access token:
+<img src="public/images/screens/a-5.png"/>
+
+`https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html`
+
+3. Copy it and paste access token to repository setting and connect
+<img src="public/images/screens/a-6.png"/>
+Wait a minute for workspace to connect with your git repo
+<img src="public/images/screens/a-7.png"/>
+
+4. Goto Application Library tab
+<img src="public/images/screens/a-8.png"/>
+
+5. Click on download icon of FusionWallet Sample and download app
+<img src="public/images/screens/a-9.png"/>
+
+6. After app is downloaded, click on deploy button and enter workspace name to deploy
+<img src="public/images/screens/a-10.png"/>
+Wait little for deploying app, after app is deployed, let start it by click on start icon
+
+8. Open workspace you can see app folder is aready is setup in your workspace
+<img src="public/images/screens/a-11.png"/>
+
+So now, we have ready a development env to develop dApp
+
+# Step 3. Create Fusion blockchain ops
+
+Next, go to Blockchain Ops tab and click New BlockChain button
+<img src="public/images/screens/b-1.png"/>
+
+2. Select Fusion as your blockchain Ops and enter name
+<img src="public/images/screens/b-2.png"/>
+
+3. Choose Ready to Go for basic setup, or Advance for more customize options, but we select basic setup for now.
+<img src="public/images/screens/b-3.png"/>
+
+4. Enter prefix as icon and password to create blockchain ops
+<img src="public/images/screens/b-4.png"/>
+
+5. Wait a while for creating and click start ico to start node
+<img src="public/images/screens/b-5.png"/>
+
+6. Click on (i) icon to get following information, we will need it later.
+    - External API URL
+    - External WSS URL
+<img src="public/images/screens/b-8.png"/>
+
+7. Enter your password and click Retrieve button to get genesis address and privatekey miner address with fusion in it.
+
+NOTE: Important note, when you just start up blockchain network, it will take sometime to load DAG file to start generating block, click on Explorer URL and wait until to see at least 5 block before starting app to run.
+<img src="public/images/screens/b-7.png"/>
 
 
-## Getting Started
+# Step 4. Install dependencies and start app
 
-Clone this repository
-```bash
-$ git clone https://github.com/FUSIONFoundation/boilerplate-react.git
-```
-```bash
-$ cd boilerplate-react
-```
-Install all dependencies
-```bash
-$ npm i
-```
-Start the application
+1. Goto sample folder
+`cd fusion-boilerplate-react`
+<img src="public/images/screens/ws-1.png"/>
 
-```bash
-$ npm start
-```
-Your browser will open ``localhost:3000``
+2. Run `npm install`
+<img src="public/images/screens/ws-2.png"/>
 
-Edit the Fusion component found in ``Components/``
+3. Config application, open file `/src/component/Fusion.js`, update following information for Morpheurlabs option.
+    - _NETWORK is 'External WS URL' you get before
+    - And ChainID is 'Network Id'
+    <img src="public/images/screens/ws-3.png"/>
+    <img src="public/images/screens/ws-31.png"/>
 
-## Features
+4. Run dev server `npm start`
+5. Open workspace information to get public URL server
+<img src="public/images/screens/ws-4.png"/>
 
-In this boilerplate we have added several functions to ensure any developer can get started by looking at the code examples. 
-Therefore we decided to integrate three functions: Send Asset, Create Asset and Get Address By Notation.
-The function to create an account object from a Private Key is also included.
-Several other utility functions were added on how to format a balance, format a given amount in wei and whether a user owns a certain asset.
+6. Click on http-server link to view dapp, If you see this screen, it means everything is setup correctly
+<img src="public/images/screens/ws-5.png"/>
 
-Please, refer to the [FUSION API Documentation](https://fusionapi.readthedocs.io/en/latest/) to view all available functions.
-Also, if you are having any troubles or you have any questions on how to utilize the protocol, feel free to join our Developers Community on Telegram.
-
-
-## Troubleshooting
-
-If you are experiencing any issues or have any suggestions we would be glad to hear from you.
-
-1.  Join us on [Telegram](https://t.me/FsnDevCommunity)
-1.  Submit a ticket to [Zendesk](https://fusionnetworks.zendesk.com/hc/en-us/requests/new)
-1.  Submit an [issue](https://github.com/FUSIONFoundation/myfusionwallet/issues)
+7. Enter private key you get from blockchain ops and click Decrypt to view wallet, you can see current FSB balance in wallet and log as below:
+<img src="public/images/screens/ws-6.png"/>
